@@ -80,7 +80,9 @@ foreach ($productNodes as $product) {
 
     try {
         // creating web service access
-        $webService = new PrestaShopWebservice('http://ihuong.com/', '7798XS4HWRIEG9FHI0ZBR6RBC3G6IPFQ', false);
+        $config = simplexml_load_file("xml/config.xml");
+        $APIKey = $config->key;
+        $webService = new PrestaShopWebservice('http://ihuong.com/', $APIKey, false);
 
 
         if (is_numeric($searchText)) {

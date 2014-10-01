@@ -10,7 +10,7 @@
 
             <div class="row placeholders">
                 <form id="searchForm" name="searchForm">
-                    <input name ="searchText" type="text" id="searchText" placeholder="Enter PRODUCT NAME or BARCODE for search..." class="form-control">
+                    <input autofocus name ="searchText" type="text" id="searchText" placeholder="Enter PRODUCT NAME or BARCODE for search..." class="form-control">
                 </form>
             </div>
 

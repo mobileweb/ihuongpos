@@ -21,10 +21,10 @@ $title = "Login";
                 <?php echo (isset($_SESSION['error'])?'<span style="color:red">'.$_SESSION['error'].'</span>':null);?>
                 <form role="form" class="form-signin" method="post" action="checklogin.php">
                     <h2 class="form-signin-heading">Please log in</h2>
-                    <input value="<?php if (isset($_COOKIE['remember_me'])) echo $_COOKIE['remember_me']; ?>" name="username" type="text" autofocus="" required="" placeholder="Username" class="form-control">
-                    <input name="password" type="password" required="" placeholder="Password" class="form-control">
+                    <input value="<?php if (isset($_COOKIE['remember_me'])) echo $_COOKIE['remember_me']; ?>" name="username" type="text" equired autofocus placeholder="Username" class="form-control">
+                    <input name="password" type="password" required placeholder="Password" class="form-control">
                     <label class="checkbox">
-                        <input name="remember" type="checkbox" value="remember-me"> Remember me
+                        <input name="remember" type="checkbox" value="remember_me" <?php if (isset($_COOKIE['remember_me'])) echo 'checked' ?>> Remember me
                     </label>
                     <button type="submit" class="btn btn-lg btn-primary btn-block">Log in</button>
                 </form>
