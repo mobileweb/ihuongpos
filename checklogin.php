@@ -1,3 +1,5 @@
+<?php include('includes/utils.php'); ?>
+
 <?php
 session_start();
 
@@ -27,8 +29,8 @@ else {
 }
 
 function checkLogin($username, $password) {
-    $loginData = simplexml_load_file("xml/login.xml");
-    if ($username == $loginData->login[0]->username && $password == $loginData->login[0]->password)
+    $config = simplexml_load_file("xml/config.xml");
+    if ($username == $config->logins->login[0]->username && doHash($password) == $config->logins->login[0]->password)
         return true;
     else
         return false;

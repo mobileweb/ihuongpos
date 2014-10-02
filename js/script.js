@@ -51,7 +51,20 @@ $(document).ready(function() {
 
     /* Settings */
     if ($("#settingForm").length > 0) {
-        console.log("a");
+        $oldAPIKey = $("#APIKey").val();
+        $oldUsername = $("#username").val();
+
+        $('#APIKey, #username, #password').on('keyup', function () {
+            $newAPIKey = $("#APIKey").val();
+            $newUsername = $("#username").val();
+            $newPassword = $("#password").val();
+
+            if ($newAPIKey != $oldAPIKey || $newUsername != $oldUsername || $newPassword.length > 0)
+                $("#submitButton").removeAttr('disabled');
+            else {
+                $("#submitButton").attr('disabled','disabled');
+            }
+        });
     }
 });
 
